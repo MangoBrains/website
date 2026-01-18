@@ -1,0 +1,30 @@
+import { Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+import Home from "./components/Home";
+import Systems from "./components/Systems";
+import Process from "./components/Process";
+import Industries from "./components/Industries";
+import TechSecurity from "./components/TechSecurity";
+import About from "./components/About";
+
+export default function App() {
+  return (
+    <>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/systems" element={<Systems />} />
+        <Route path="/process" element={<Process />} />
+        <Route path="/industries" element={<Industries />} />
+        <Route path="/tech" element={<TechSecurity />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+
+      <Footer />
+    </>
+  );
+}
