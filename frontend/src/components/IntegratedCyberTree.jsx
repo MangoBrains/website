@@ -58,7 +58,7 @@
 //                     </p>
 
 //                     <div className="relative flex flex-col items-center mt-12 group z-50">
-      
+
 //       {/* 1. THE STEM (Connecting trunk to fruit) */}
 //       {/* It drops down into the top-center of the mango */}
 //       <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-1 h-8 bg-slate-800 z-0">
@@ -70,27 +70,27 @@
 //         href="#"
 //         className="relative flex items-center justify-center
 //         w-72 h-32
-        
+
 //         /* THE SHAPE MAGIC: 
 //            TL=Broad Shoulder | TR=Stem attachment 
 //            BR=The 'Beak' (Sharp) | BL=The 'Belly' (Fat) 
 //         */
 //         rounded-[55%_45%_30%_70%_/_60%_50%_50%_60%]
-        
+
 //         /* MANGO SKIN: Deep Golden Yellow to Orange */
 //         bg-gradient-to-br from-[#FFD700] via-[#FFB347] to-[#FF8C00]
-        
+
 //         /* DEPTH: Inner highlight + Drop shadow */
 //         shadow-[inset_-10px_-10px_20px_rgba(180,83,9,0.3),0_15px_35px_rgba(251,191,36,0.4)]
-        
+
 //         /* POSITION: Tilted to hang heavily */
 //         -rotate-6 origin-top
-        
+
 //         /* HOVER EFFECTS */
 //         transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]
 //         hover:scale-110 hover:rotate-0 hover:shadow-[0_20px_50px_rgba(251,191,36,0.6)]"
 //       >
-        
+
 //         {/* SHINE (The glossy skin reflection) */}
 //         <div className="absolute top-4 left-6 w-20 h-8 bg-white/40 rounded-full blur-md rotate-[-15deg] pointer-events-none"></div>
 
@@ -309,16 +309,16 @@
 //                         <a
 //                             href="#"
 //                             className="relative group flex items-center justify-center px-12 py-5
-                            
+
 //                             /* SHAPE: Perfect Oval */
 //                             rounded-full
-                            
+
 //                             /* COLOR: Rich Mango Gradient */
 //                             bg-gradient-to-r from-amber-400 via-orange-500 to-red-500
-                            
+
 //                             /* GLOW: Neon outer glow */
 //                             shadow-[0_0_40px_-5px_rgba(245,158,11,0.5)]
-                            
+
 //                             /* INTERACTION */
 //                             transition-all duration-300
 //                             hover:scale-105 hover:shadow-[0_0_60px_-5px_rgba(245,158,11,0.8)] hover:-translate-y-1"
@@ -561,7 +561,7 @@
 //                         <div className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-green-500/20 via-green-400/5 to-transparent animate-pulse"></div>
 //                         <div className="absolute inset-0 bg-[linear-gradient(transparent,rgba(34,197,94,0.5),transparent)] bg-[length:100%_150px] animate-flow opacity-30"></div>
 //                     </div>
-                    
+
 //                     {/* Top Connector */}
 //                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 md:w-16 h-8 bg-slate-900 border border-slate-700 rounded-full flex items-center justify-center z-10">
 //                         <div className="w-2 h-2 bg-green-500 rounded-full shadow-[0_0_10px_#22c55e] animate-pulse"></div>
@@ -576,7 +576,7 @@
 
 //                     {/* ROW 1: TOP BRANCHES */}
 //                     <div className="flex flex-col md:flex-row justify-center w-full relative gap-16 md:gap-0">
-                        
+
 //                         {/* Left Branch */}
 //                         <div className="relative w-full md:w-[350px] h-auto md:h-32 flex justify-center md:justify-start items-center md:items-end md:pr-12 md:mr-12">
 //                             {/* Curve Desktop */}
@@ -674,10 +674,10 @@ import React from 'react';
 
 const IntegratedCyberTree = () => {
     const systems = [
-        { title: "Sales & Tracking", id: "01", side: "left", color: "from-orange-500 to-red-600" },
-        { title: "Payments & Records", id: "02", side: "right", color: "from-yellow-400 to-orange-500" },
-        { title: "Ops & Workflow", id: "03", side: "left", color: "from-pink-500 to-purple-600" },
-        { title: "Business Insights", id: "04", side: "right", color: "from-cyan-400 to-blue-600" },
+        { title: "Sales & Lead Tracking", tags: ["LEADS", "PIPELINE", "FOLLOW-UPS"], id: "01", side: "left", color: "from-orange-500 to-red-600" },
+        { title: "Billing, Invoices & Records", id: "02", side: "right", color: "from-yellow-400 to-orange-500" },
+        { title: "Operations & Team Workflow", id: "03", side: "left", color: "from-pink-500 to-purple-600" },
+        { title: "Reports & Business Insights", id: "04", side: "right", color: "from-cyan-400 to-blue-600" },
     ];
 
     return (
@@ -712,7 +712,7 @@ const IntegratedCyberTree = () => {
                ========================================= */}
             <section className="relative z-20 pt-20 pb-0 flex flex-col items-center text-center px-4">
                 <div className="max-w-3xl relative flex flex-col items-center">
-                    
+
                     {/* Responsive Text Sizes */}
                     <h1 className="text-3xl md:text-6xl font-semibold leading-tight text-white mb-4 md:mb-6 tracking-tight">
                         Custom Business Systems
@@ -725,6 +725,9 @@ const IntegratedCyberTree = () => {
                     <p className="mt-4 md:mt-6 text-sm md:text-lg text-slate-400 leading-relaxed max-w-xl">
                         We design internal software that centralizes operations and replaces fragmented tools.
                     </p>
+                    <p className="mt-4 md:mt-6 text-sm md:text-lg text-slate-400 leading-relaxed max-w-xl">
+                        Each system works independently, but together they form one integrated operational platform.
+                    </p>
 
                     {/* === THE OVAL MANGO BUTTON === */}
                     <div className="relative flex flex-col items-center mt-8 z-50 scale-90 md:scale-100">
@@ -735,7 +738,7 @@ const IntegratedCyberTree = () => {
                         <a href="#" className="relative group flex items-center justify-center px-8 py-4 md:px-12 md:py-5 rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 shadow-[0_0_40px_-5px_rgba(245,158,11,0.5)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_-5px_rgba(245,158,11,0.8)] hover:-translate-y-1">
                             <div className="absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-white/30 to-transparent opacity-100 rounded-t-full pointer-events-none"></div>
                             <div className="absolute inset-0 rounded-full border border-white/20 shadow-[inset_0_-4px_10px_rgba(0,0,0,0.2)]"></div>
-                            <span className="relative z-10 text-white font-bold text-sm md:text-lg tracking-wide drop-shadow-md">Request a Demo</span>
+                            <span className="relative z-10 text-white font-bold text-sm md:text-lg tracking-wide drop-shadow-md">Request Demo</span>
                         </a>
 
                         <div className="absolute top-full w-[2px] h-16 md:h-24 bg-slate-800 -z-10 overflow-hidden">
@@ -757,7 +760,7 @@ const IntegratedCyberTree = () => {
                         <div className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-green-500/20 via-green-400/5 to-transparent animate-pulse"></div>
                         <div className="absolute inset-0 bg-[linear-gradient(transparent,rgba(34,197,94,0.5),transparent)] bg-[length:100%_150px] animate-flow opacity-30"></div>
                     </div>
-                    
+
                     {/* Connector Node */}
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 md:w-16 h-8 bg-slate-900 border border-slate-700 rounded-full flex items-center justify-center z-10">
                         <div className="w-2 h-2 bg-green-500 rounded-full shadow-[0_0_10px_#22c55e] animate-pulse"></div>
@@ -828,7 +831,7 @@ const MangoNode = ({ data, className }) => {
 
                     {/* Top Bar (Hidden on very small screens, simplified on mobile) */}
                     <div className="flex justify-between items-center px-2 md:px-4 py-2 md:py-3 border-b border-white/5 bg-white/5">
-                        <span className="text-[8px] md:text-[10px] text-gray-400 font-bold tracking-widest">SYS // {data.id}</span>
+                        <span className="text-[8px] md:text-[10px] text-gray-400 font-bold tracking-widest">SOL // {data.id}</span>
                         <div className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full bg-green-500 shadow-[0_0_5px_#22c55e]"></div>
                     </div>
 
@@ -838,13 +841,14 @@ const MangoNode = ({ data, className }) => {
                         <div className={`bg-gradient-to-r ${data.color} bg-clip-text text-transparent font-bold text-xs md:text-xl mb-1 md:mb-2 drop-shadow-sm leading-tight`}>
                             {data.title}
                         </div>
-                        
+
                         {/* Tech details: Hidden on mobile to save space, visible on desktop */}
-                        <div className="hidden md:flex text-gray-500 text-xs gap-2">
-                            <span>• DATA</span>
-                            <span>• LOGS</span>
-                            <span>• API</span>
-                        </div>
+                        {/* <div className="hidden md:flex text-gray-500 text-xs gap-2">
+                            {data.tags.map(tag => (
+                                <span key={tag}>• {tag}</span>
+                            ))}
+                        </div> */}
+
                     </div>
 
                     {/* Bottom Highlight */}

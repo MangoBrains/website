@@ -9,6 +9,8 @@ import Process from "./components/Process";
 import Industries from "./components/Industries";
 import TechSecurity from "./components/TechSecurity";
 import About from "./components/About";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import TermsOfUse from "./components/TermsOfUse";
 
 export default function App() {
   return (
@@ -22,6 +24,8 @@ export default function App() {
         <Route path="/industries" element={<Industries />} />
         <Route path="/tech" element={<TechSecurity />} />
         <Route path="/about" element={<About />} />
+        <Route path="/privacy" element={<PrivacyPolicy/>}/>
+        <Route path="/terms" element={<TermsOfUse/>}/>
       </Routes>
 
       <Footer />

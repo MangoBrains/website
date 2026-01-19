@@ -191,10 +191,10 @@ import logo from "../assets/logoweb1.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Systems", href: "/systems" },
-  { name: "Process", href: "/process" },
-  { name: "Industries", href: "/industries" },
-  { name: "Tech", href: "/tech" },
+  // { name: "Systems", href: "/systems" },
+  { name: "How we work", href: "/process" },
+  // { name: "Industries", href: "/industries" },
+  // { name: "Tech", href: "/tech" },
   { name: "About", href: "/about" },
 ];
 
@@ -245,14 +245,15 @@ export default function Navbar() {
              ======================= */}
           <Link to="/" className="flex items-center gap-3 group z-50" onClick={() => setOpen(false)}>
             {/* Logo Box */}
-            <div className="w-10 h-10 flex items-center justify-center bg-white/5 border border-white/10 rounded-lg group-hover:border-green-500/50 transition-colors">
-               <img src={logo} alt="Logo" className="w-6 h-6 object-contain" />
+            <div className="w-14 h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-lg group-hover:border-green-500/50 transition-colors">
+               <img src={logo} alt="Logo" className="w-16 h-16  object-contain" />
             </div>
             {/* Text */}
             <div className="flex flex-col">
               <span className="text-white font-bold tracking-wider leading-none">MANGO</span>
-              <span className="text-[10px] text-green-500 font-mono tracking-widest leading-none">SYSTEMS</span>
+              <span className="text-[12px] text-green-500 font-mono tracking-widest leading-none">Brains</span>
             </div>
+            {/* </div> */}
           </Link>
 
 
@@ -302,7 +303,7 @@ export default function Navbar() {
                
                {/* Text */}
                <span className="relative z-10 text-[11px] font-black text-white tracking-widest uppercase flex items-center gap-2">
-                 Demo Access
+                 Request Demo 
                  <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
                </span>
              </Link>
@@ -370,7 +371,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className="col-span-1 sm:col-span-2 mt-6 bg-gradient-to-r from-amber-400 to-orange-600 rounded-xl p-5 text-center font-bold text-white shadow-[0_0_20px_rgba(245,158,11,0.3)] text-lg"
               >
-                INITIALIZE DEMO
+                Request DEMO
               </Link>
            </div>
 
