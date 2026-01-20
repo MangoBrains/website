@@ -521,15 +521,33 @@ export default function Footer() {
             </h4>
 
             <div className="space-y-4 text-sm text-slate-400">
-              <a href="mailto:contact@mangobrains.com" className="block group">
+              {/* <a href="mailto:contact@mangobrains.com" className="block group">
                 <div className="text-[10px] text-slate-600 mb-1 group-hover:text-green-500 transition-colors">
                   EMAIL
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded px-3 py-2 text-slate-200 group-hover:border-green-500/50 group-hover:text-white transition-all">
                   contact@mangobrains.com
                 </div>
-              </a>
+              </a> */}
+              <Link
+                to="/contact"
+                onClick={() => window.scrollTo(0, 0)} // Forces scroll to top
+                className="block group"
+              >
+                {/* Label above the box */}
+                <div className="text-[10px] text-slate-600 mb-1 group-hover:text-green-500 transition-colors uppercase tracking-widest">
+                  Initiate_Uplink
+                </div>
 
+                {/* The Box itself */}
+                <div className="flex items-center justify-between bg-white/5 border border-white/10 rounded px-3 py-2 text-slate-200 group-hover:border-green-500/50 group-hover:text-white transition-all">
+                  <span>contact@mangobrains.com</span>
+                  {/* Little arrow hint that it goes somewhere */}
+                  <span className="text-green-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                    →
+                  </span>
+                </div>
+              </Link>
               <div>
                 <div className="text-[10px] text-slate-600 mb-1">LOCATION</div>
                 <div className="flex items-center gap-2 text-slate-200">

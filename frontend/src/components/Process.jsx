@@ -162,7 +162,7 @@ export default function Process() {
                 <div className="absolute inset-0 rounded-full border border-white/20 shadow-[inset_0_-4px_10px_rgba(0,0,0,0.2)]"></div>
                 
                 <span className="relative z-10 text-white font-bold text-lg tracking-wide drop-shadow-md">
-                   Request a Discussion
+                   Start a conversation
                 </span>
             </a>
           </div>

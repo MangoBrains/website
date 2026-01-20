@@ -1,190 +1,3 @@
-// import { useState } from "react";
-// import { Link } from "react-router-dom";
-// import logo from "../assets/logoweb1.png";
-
-// const navLinks = [
-//   { name: "Home", href: "/" },
-//   { name: "Systems", href: "/systems" },
-//   { name: "Process", href: "/process" },
-//   { name: "Industries", href: "/industries" },
-//   { name: "Tech & Security", href: "/tech" },
-//   { name: "About", href: "/about" },
-// ];
-
-// export default function Navbar() {
-//   const [open, setOpen] = useState(false);
-
-//   return (
-//     <nav className="sticky top-0 z-50 bg-black border-b border-white/10">
-//       <div className="max-w-7xl mx-auto px-6">
-//         <div className="flex h-14 items-center justify-between">
-
-//           {/* LOGO + BRAND */}
-//           <Link to="/" className="flex items-center gap-3 shrink-0">
-//             <div className="h-8 w-8 flex items-center justify-center overflow-hidden">
-//               <img
-//                 src={logo}
-//                 alt="MangoBrains logo"
-//                 className="max-h-full max-w-full object-contain"
-//               />
-//             </div>
-//             <span className="text-white font-semibold tracking-wide whitespace-nowrap">
-//               MangoBrains
-//             </span> 
-//           </Link>
-
-//           {/* DESKTOP NAV */}
-//           <div className="hidden md:flex items-center gap-6">
-//             {navLinks.map((link) => (
-//               <Link
-//                 key={link.name}
-//                 to={link.href}
-//                 className="text-sm text-gray-400 hover:text-white transition-colors"
-//               >
-//                 {link.name}
-//               </Link>
-//             ))}
-
-//             <Link
-//               to="/contact"
-//               className="ml-2 rounded-md bg-white px-4 py-1.5 text-sm font-medium text-black hover:bg-gray-100 transition-colors"
-//             >
-//               Contact / Demo
-//             </Link>
-//           </div>
-
-//           {/* MOBILE TOGGLE */}
-//           <button
-//             onClick={() => setOpen(!open)}
-//             className="md:hidden text-gray-300 text-xl"
-//           >
-//             ☰
-//           </button>
-//         </div>
-//       </div>
-
-//       {/* MOBILE MENU */}
-//       {open && (
-//         <div className="md:hidden bg-black border-t border-white/10">
-//           <div className="px-6 py-4 flex flex-col gap-4">
-//             {navLinks.map((link) => (
-//               <Link
-//                 key={link.name}
-//                 to={link.href}
-//                 onClick={() => setOpen(false)}
-//                 className="text-gray-300 hover:text-white"
-//               >
-//                 {link.name}
-//               </Link>
-//             ))}
-
-//             <Link
-//               to="/contact"
-//               onClick={() => setOpen(false)}
-//               className="mt-2 rounded-md bg-white px-4 py-2 text-sm font-medium text-black text-center hover:bg-gray-100 transition-colors"
-//             >
-//               Contact / Demo
-//             </Link>
-//           </div>
-//         </div>
-//       )}
-//     </nav>
-//   );
-// }
-
-
-
-// option 1
-
-
-// import { useState } from "react";
-// import { Link } from "react-router-dom";
-// import logo from "../assets/logoweb1.png";
-
-// const navLinks = [
-//   { name: "Home", href: "/" },
-//   { name: "Systems", href: "/systems" },
-//   { name: "Process", href: "/process" },
-//   { name: "Industries", href: "/industries" },
-//   { name: "Tech & Security", href: "/tech" },
-//   { name: "About", href: "/about" },
-// ];
-
-// export default function Navbar() {
-//   const [open, setOpen] = useState(false);
-
-//   return (
-//     <>
-//       {/* Floating Wrapper */}
-//       <nav className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
-//         <div className="w-full max-w-7xl relative group">
-          
-//           {/* THE GLASS CONTAINER */}
-//           <div className="bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-2xl px-6 h-16 flex items-center justify-between shadow-2xl relative overflow-hidden transition-all duration-300 hover:border-white/20 hover:bg-slate-900/80">
-            
-//             {/* The Mango Underglow (Bottom Border) */}
-//             <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-50 group-hover:opacity-100 group-hover:via-amber-400 transition-opacity duration-500"></div>
-
-//             {/* LOGO */}
-//             <Link to="/" className="flex items-center gap-3 shrink-0 relative z-10">
-//               <div className="h-8 w-8 rounded-md bg-white/5 flex items-center justify-center border border-white/10">
-//                 <img src={logo} alt="Logo" className="w-5 h-5 object-contain" />
-//               </div>
-//               <span className="text-white font-semibold tracking-wide">MangoBrains</span>
-//             </Link>
-
-//             {/* DESKTOP NAV */}
-//             <div className="hidden md:flex items-center gap-1">
-//               {navLinks.map((link) => (
-//                 <Link
-//                   key={link.name}
-//                   to={link.href}
-//                   className="relative px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/5 group/link"
-//                 >
-//                   {link.name}
-//                   {/* Tiny green dot on hover */}
-//                   <span className="absolute top-2 right-2 w-1 h-1 bg-green-500 rounded-full opacity-0 group-hover/link:opacity-100 transition-opacity"></span>
-//                 </Link>
-//               ))}
-
-//               <Link
-//                 to="/contact"
-//                 className="ml-4 rounded-lg bg-gradient-to-r from-amber-500 to-orange-600 px-5 py-2 text-sm font-bold text-white hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] transition-all"
-//               >
-//                 Get Started
-//               </Link>
-//             </div>
-
-//             {/* MOBILE TOGGLE */}
-//             <button onClick={() => setOpen(!open)} className="md:hidden text-gray-300 text-xl">
-//               {open ? "✕" : "☰"}
-//             </button>
-//           </div>
-
-//           {/* MOBILE MENU (Floating below) */}
-//           {open && (
-//             <div className="absolute top-20 left-0 right-0 bg-slate-900/90 backdrop-blur-xl border border-white/10 rounded-xl p-4 flex flex-col gap-2 shadow-xl animate-in slide-in-from-top-2">
-//               {navLinks.map((link) => (
-//                 <Link
-//                   key={link.name}
-//                   to={link.href}
-//                   onClick={() => setOpen(false)}
-//                   className="px-4 py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg"
-//                 >
-//                   {link.name}
-//                 </Link>
-//               ))}
-//             </div>
-//           )}
-//         </div>
-//       </nav>
-//     </>
-//   );
-// }
-
-
-// option 2.1
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/Logo_MB.png";
@@ -219,6 +32,12 @@ export default function Navbar() {
     }
   }, [open]);
 
+  // Helper to close menu AND scroll top
+  const handleLinkClick = () => {
+    setOpen(false);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       <nav 
@@ -241,39 +60,35 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
           {/* =======================
-              1. LOGO
+              1. LOGO (UPSCALED)
              ======================= */}
-       {/* =======================
-    1. LOGO (UPSCALED)
-   ======================= */}
-<Link 
-  to="/" 
-  className="flex items-center gap-4 group z-50 focus:outline-none" 
-  onClick={() => setOpen(false)}
->
-  
-  {/* CONTAINER: Increased to w-16 h-16 (64px) or try w-20 h-20 */}
-  <div className="relative w-16 h-16 flex items-center justify-center">
-     
-     {/* Hover Glow Effect (Scaled to match new size) */}
-     <div className="absolute inset-0 bg-green-500/30 blur-[25px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-     
-     <img 
-       src={logo} 
-       alt="MangoBrains" 
-       // Added scale-110 to force it slightly larger within the box if needed
-       className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_15px_rgba(0,0,0,0.5)] transform scale-110" 
-     />
-  </div>
+          <Link 
+            to="/" 
+            className="flex items-center gap-4 group z-50 focus:outline-none" 
+            onClick={handleLinkClick} // Scroll to top added here
+          >
+            
+            {/* CONTAINER: Increased size */}
+            <div className="relative w-16 h-16 flex items-center justify-center">
+               
+               {/* Hover Glow Effect */}
+               <div className="absolute inset-0 bg-green-500/30 blur-[25px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+               
+               <img 
+                 src={logo} 
+                 alt="MangoBrains" 
+                 className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_15px_rgba(0,0,0,0.5)] transform scale-110" 
+               />
+            </div>
 
-  {/* TEXT: Adjusted gap and spacing */}
-  <div className="flex flex-col justify-center">
-    <span className="text-3xl font-bold text-white tracking-tight leading-none group-hover:text-green-400 transition-colors">
-      Mango<span className="font-light text-slate-400 group-hover:text-white transition-colors">Brains</span>
-    </span>
-  </div>
-  
-</Link>
+            {/* TEXT */}
+            <div className="flex flex-col justify-center">
+              <span className="text-3xl font-bold text-white tracking-tight leading-none group-hover:text-green-400 transition-colors">
+                Mango<span className="font-light text-slate-400 group-hover:text-white transition-colors">Brains</span>
+              </span>
+            </div>
+            
+          </Link>
 
 
           {/* =======================
@@ -287,9 +102,10 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   to={link.href}
+                  onClick={() => window.scrollTo(0, 0)} // Scroll to top added here
                   className="group relative flex flex-col items-center h-full pt-0"
                 >
-                  {/* The Stem (Hangs down from top border) */}
+                  {/* The Stem */}
                   <div className={`w-[1px] transition-all duration-300 ease-out origin-top
                     ${isActive ? "h-6 bg-green-500 shadow-[0_0_8px_#22c55e]" : "h-0 bg-slate-700 group-hover:h-4 group-hover:bg-green-400"}
                   `}></div>
@@ -312,12 +128,13 @@ export default function Navbar() {
           <div className="hidden md:flex items-center">
              <Link 
                to="/contact" 
+               onClick={() => window.scrollTo(0, 0)} // Scroll to top added here
                className="relative overflow-hidden rounded-full px-6 py-2.5 transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] group"
              >
                {/* Background Gradient */}
                <div className="absolute inset-0 bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 opacity-90 group-hover:opacity-100 transition-opacity"></div>
                
-               {/* Glass Gloss (Top Half) */}
+               {/* Glass Gloss */}
                <div className="absolute inset-x-0 top-0 h-[50%] bg-gradient-to-b from-white/40 to-transparent pointer-events-none"></div>
                
                {/* Text */}
@@ -364,7 +181,7 @@ export default function Navbar() {
                 <Link 
                   key={link.name} 
                   to={link.href} 
-                  onClick={() => setOpen(false)}
+                  onClick={handleLinkClick} // Scroll to top added here
                   className="group relative border border-white/10 bg-white/5 p-5 rounded-xl overflow-hidden active:scale-95 transition-all"
                   style={{ transitionDelay: `${i * 50}ms` }}
                 >
@@ -387,7 +204,7 @@ export default function Navbar() {
               {/* Mobile CTA */}
               <Link 
                 to="/contact" 
-                onClick={() => setOpen(false)}
+                onClick={handleLinkClick} // Scroll to top added here
                 className="col-span-1 sm:col-span-2 mt-6 bg-gradient-to-r from-amber-400 to-orange-600 rounded-xl p-5 text-center font-bold text-white shadow-[0_0_20px_rgba(245,158,11,0.3)] text-lg"
               >
                 Request DEMO
@@ -399,4 +216,3 @@ export default function Navbar() {
     </>
   );
 }
-
