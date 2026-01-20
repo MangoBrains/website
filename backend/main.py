@@ -1,57 +1,56 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, BackgroundTasks
 from pydantic import BaseModel, EmailStr
+from fastapi.middleware.cors import CORSMiddleware
 import smtplib
 from email.message import EmailMessage
 import os
-from dotenv import load_dotenv
 
-from fastapi.middleware.cors import CORSMiddleware
-
-
-load_dotenv()
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173","https://mangobrains.com","https://www.mangobrains.com"],  # Vite dev URL
-    allow_credentials=True, 
+    allow_origins=[
+        "http://localhost:5173",
+        "https://mangobrains.com",
+        "https://www.mangobrains.com",
+    ],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 class ContactForm(BaseModel):
     name: str
     email: EmailStr
     company: str | None = None
     message: str
 
-@app.post("/contact")
-def send_contact_email(data: ContactForm):
-    try:
-        msg = EmailMessage()
-        msg["Subject"] = "New Contact Form Submission"
-        msg["From"] = os.getenv("SMTP_USER")
-        msg["To"] = os.getenv("SMTP_USER")
-        msg["Reply-To"] = data.email
 
-        body = f"""
+def send_email(data: ContactForm):
+    msg = EmailMessage()
+    msg["From"] = os.getenv("SMTP_FROM")
+    msg["To"] = os.getenv("SMTP_TO")
+    msg["Subject"] = "New Contact Form Submission"
+
+    msg.set_content(
+        f"""
 Name: {data.name}
 Email: {data.email}
-Company: {data.company or 'N/A'}
+Company: {data.company or "N/A"}
 
 Message:
 {data.message}
-        """
-        msg.set_content(body)
+"""
+    )
 
-        with smtplib.SMTP(os.getenv("SMTP_HOST"), int(os.getenv("SMTP_PORT"))) as server:
-            server.starttls()
-            server.login(
-                os.getenv("SMTP_USER"),
-                os.getenv("SMTP_PASS")
-            )
-            server.send_message(msg)
+    # 🔑 TIMEOUT IS CRITICAL
+    with smtplib.SMTP(os.getenv("SMTP_HOST"), int(os.getenv("SMTP_PORT")), timeout=10) as server:
+        server.starttls()
+        server.login(os.getenv("SMTP_USER"), os.getenv("SMTP_PASS"))
+        server.send_message(msg)
 
-        return {"status": "success"}
 
-    except Exception as e:
-        raise HTTPException(status_code=500, detail="Failed to send email")
+@app.post("/contact")
+def contact(data: ContactForm, background_tasks: BackgroundTasks):
+    background_tasks.add_task(send_email, data)
+    return {"ok": True}
