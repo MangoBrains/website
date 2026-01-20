@@ -11,6 +11,7 @@ import TechSecurity from "./components/TechSecurity";
 import About from "./components/About";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfUse from "./components/TermsOfUse";
+import ContactForm from "./components/ContactForm";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/privacy" element={<PrivacyPolicy/>}/>
         <Route path="/terms" element={<TermsOfUse/>}/>
+        <Route path="/contact" element={<ContactForm/>}/>
       </Routes>
 
       <Footer />

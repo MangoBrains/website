@@ -187,7 +187,7 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/logoweb1.png";
+import logo from "../assets/Logo_MB.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -243,18 +243,37 @@ export default function Navbar() {
           {/* =======================
               1. LOGO
              ======================= */}
-          <Link to="/" className="flex items-center gap-3 group z-50" onClick={() => setOpen(false)}>
-            {/* Logo Box */}
-            <div className="w-14 h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-lg group-hover:border-green-500/50 transition-colors">
-               <img src={logo} alt="Logo" className="w-16 h-16  object-contain" />
-            </div>
-            {/* Text */}
-            <div className="flex flex-col">
-              <span className="text-white font-bold tracking-wider leading-none">MANGO</span>
-              <span className="text-[12px] text-green-500 font-mono tracking-widest leading-none">Brains</span>
-            </div>
-            {/* </div> */}
-          </Link>
+       {/* =======================
+    1. LOGO (UPSCALED)
+   ======================= */}
+<Link 
+  to="/" 
+  className="flex items-center gap-4 group z-50 focus:outline-none" 
+  onClick={() => setOpen(false)}
+>
+  
+  {/* CONTAINER: Increased to w-16 h-16 (64px) or try w-20 h-20 */}
+  <div className="relative w-16 h-16 flex items-center justify-center">
+     
+     {/* Hover Glow Effect (Scaled to match new size) */}
+     <div className="absolute inset-0 bg-green-500/30 blur-[25px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+     
+     <img 
+       src={logo} 
+       alt="MangoBrains" 
+       // Added scale-110 to force it slightly larger within the box if needed
+       className="w-full h-full object-contain relative z-10 drop-shadow-[0_0_15px_rgba(0,0,0,0.5)] transform scale-110" 
+     />
+  </div>
+
+  {/* TEXT: Adjusted gap and spacing */}
+  <div className="flex flex-col justify-center">
+    <span className="text-3xl font-bold text-white tracking-tight leading-none">
+      Mango<span className="font-light text-slate-400 group-hover:text-white transition-colors">Brains</span>
+    </span>
+  </div>
+  
+</Link>
 
 
           {/* =======================

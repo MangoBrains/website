@@ -23,7 +23,7 @@ export default function ContactForm() {
 
     try {
       // In production, use an environment variable for the URL
-      const response = await fetch("http://127.0.0.1:8000/contact", {
+      const response = await fetch("http://localhost:8000/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -64,7 +64,7 @@ export default function ContactForm() {
             </h1>
             
             <p className="text-lg text-slate-400 max-w-2xl border-l-2 border-slate-800 pl-6">
-              This is an initial conversation to understand your context and see if there’s a fit. 
+              This is an initial conversation to understand your context and see if there’s a fit.
             </p>
         </div>
 
@@ -73,7 +73,7 @@ export default function ContactForm() {
           <div className="grid md:grid-cols-2 gap-8">
             {/* NAME INPUT */}
             <div className="group relative">
-                <label className="block text-xs font-bold text-white-500 mb-2 uppercase tracking-widest group-focus-within:text-green-400 transition-colors">
+                <label className="block text-xs font-bold text-white mb-2 uppercase tracking-widest group-focus-within:text-green-400 transition-colors">
                     Name
                 </label>
                 <input
@@ -89,7 +89,7 @@ export default function ContactForm() {
 
             {/* EMAIL INPUT */}
             <div className="group relative">
-                <label className="block text-xs font-bold text-white-500 mb-2 uppercase tracking-widest group-focus-within:text-green-400 transition-colors">
+                <label className="block text-xs font-bold text-white mb-2 uppercase tracking-widest group-focus-within:text-green-400 transition-colors">
                     Email
                 </label>
                 <input
@@ -106,7 +106,7 @@ export default function ContactForm() {
 
           {/* COMPANY INPUT */}
           <div className="group relative">
-                <label className="block text-xs font-bold text-white-500 mb-2 uppercase tracking-widest group-focus-within:text-green-400 transition-colors">
+                <label className="block text-xs font-bold text-white mb-2 uppercase tracking-widest group-focus-within:text-green-400 transition-colors">
                     Company
                 </label>
                 <input
@@ -121,7 +121,7 @@ export default function ContactForm() {
 
           {/* MESSAGE INPUT */}
           <div className="group relative">
-                <label className="block text-xs font-bold text-white-500 mb-2 uppercase tracking-widest group-focus-within:text-green-400 transition-colors">
+                <label className="block text-xs font-bold text-white mb-2 uppercase tracking-widest group-focus-within:text-green-400 transition-colors">
                     Message
                 </label>
                 <textarea
@@ -152,7 +152,7 @@ export default function ContactForm() {
                     {status === "loading" ? (
                         <>
                            <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                           <span className="text-white font-bold tracking-wide text-sm uppercase">submiting...</span>
+                           <span className="text-white font-bold tracking-wide text-sm uppercase">Transmitting...</span>
                         </>
                     ) : (
                         <span className="text-white font-bold tracking-wide text-sm uppercase">Submit</span>
