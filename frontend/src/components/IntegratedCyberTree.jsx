@@ -671,7 +671,7 @@
 // Option 2 for resp...
 
 import React from 'react';
-
+import { Link } from "react-router-dom";
 const IntegratedCyberTree = () => {
     const systems = [
         { title: "Sales & Lead Tracking", tags: ["LEADS", "PIPELINE", "FOLLOW-UPS"], id: "01", side: "left", color: "from-orange-500 to-red-600" },
@@ -735,11 +735,15 @@ const IntegratedCyberTree = () => {
                             <div className="absolute top-0 left-0 w-full h-1/2 bg-green-400 blur-[1px] animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]"></div>
                         </div>
 
-                        <a href="/contact" className="relative group flex items-center justify-center px-8 py-4 md:px-12 md:py-5 rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 shadow-[0_0_40px_-5px_rgba(245,158,11,0.5)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_-5px_rgba(245,158,11,0.8)] hover:-translate-y-1">
+                        <Link
+                            to="/contact"
+                            onClick={() => window.scrollTo(0, 0)} // Ensures page starts at top
+                            className="relative group flex items-center justify-center px-8 py-4 md:px-12 md:py-5 rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 shadow-[0_0_40px_-5px_rgba(245,158,11,0.5)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_-5px_rgba(245,158,11,0.8)] hover:-translate-y-1"
+                        >
                             <div className="absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-white/30 to-transparent opacity-100 rounded-t-full pointer-events-none"></div>
                             <div className="absolute inset-0 rounded-full border border-white/20 shadow-[inset_0_-4px_10px_rgba(0,0,0,0.2)]"></div>
                             <span className="relative z-10 text-white font-bold text-sm md:text-lg tracking-wide drop-shadow-md">Request Demo</span>
-                        </a>
+                        </Link>
 
                         <div className="absolute top-full w-[2px] h-16 md:h-24 bg-slate-800 -z-10 overflow-hidden">
                             <div className="absolute inset-0 bg-green-500 animate-[cableflow_1.5s_linear_infinite] bg-[length:100%_40px] bg-no-repeat opacity-80"></div>

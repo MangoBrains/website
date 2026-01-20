@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Process() {
   return (
@@ -142,7 +143,7 @@ export default function Process() {
       {/* =========================================
           BLOCK 8 — CTA (MANGO BUTTON)
          ========================================= */}
-      <section className="py-32 relative overflow-hidden">
+<section className="py-32 relative overflow-hidden">
         {/* Background Glow */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505] to-[#050505] z-10"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-green-500/10 blur-[120px] rounded-full"></div>
@@ -156,15 +157,19 @@ export default function Process() {
           </p>
           
           <div className="flex justify-center">
-            <a href="/contact" className="relative group flex items-center justify-center px-10 py-5 rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 shadow-[0_0_40px_-5px_rgba(245,158,11,0.5)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_-5px_rgba(245,158,11,0.8)] hover:-translate-y-1">
+            <Link 
+              to="/contact" 
+              onClick={() => window.scrollTo(0, 0)} // Ensures page starts at top
+              className="relative group flex items-center justify-center px-10 py-5 rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 shadow-[0_0_40px_-5px_rgba(245,158,11,0.5)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_-5px_rgba(245,158,11,0.8)] hover:-translate-y-1"
+            >
                 {/* Gloss Effect */}
                 <div className="absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-white/30 to-transparent opacity-100 rounded-t-full pointer-events-none"></div>
                 <div className="absolute inset-0 rounded-full border border-white/20 shadow-[inset_0_-4px_10px_rgba(0,0,0,0.2)]"></div>
                 
                 <span className="relative z-10 text-white font-bold text-lg tracking-wide drop-shadow-md">
-                   Start a conversation
+                   Start a Conversation
                 </span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
