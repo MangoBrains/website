@@ -114,7 +114,7 @@
 
 import React from "react";
 import CoreValues from "./CoreValues";
-
+import { Link } from "react-router-dom";
 export default function About() {
   return (
     <main className="bg-[#050505] text-slate-300 font-mono selection:bg-green-500/30 overflow-x-hidden">
@@ -141,7 +141,7 @@ export default function About() {
 
             <p className="text-xl md:text-2xl text-slate-400 leading-relaxed font-light border-l-2 border-green-500 pl-6">
               MangoBrains is a small  team that builds software to help
-              businesses manage their day-to-day work — from coordination and tracking
+              businesses manage their day-to-day work from coordination and tracking
               to reporting and decision-making.
             </p>
           </div>
@@ -169,7 +169,7 @@ export default function About() {
             <div className="border-l-2 border-green-500 pl-6 md:pl-10 py-2">
               <p className="text-xl md:text-3xl text-slate-300 font-light leading-relaxed tracking-wide">
                 We focus on the software and workflows that sit at the center of day-to-day
-                operations — the tools people rely on to <span className="text-white font-medium border-b border-green-500/30">get work done</span>, share information,
+                operations the tools people rely on to <span className="text-white font-medium border-b border-green-500/30">get work done</span>, share information,
                 and keep things running.
               </p>
 
@@ -195,9 +195,10 @@ export default function About() {
       {/* =========================================
           BLOCK 5 — CTA
          ========================================= */}
+
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505] to-[#050505] z-10"></div>
-
+        
         <div className="max-w-4xl mx-auto px-6 relative z-20 text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Let’s Talk Systems
@@ -206,17 +207,21 @@ export default function About() {
             If you’re looking to replace manual workflows or bring structure
             to internal operations, we should talk.
           </p>
-
+          
           <div className="flex justify-center">
-            <a href="/contact" className="relative group flex items-center justify-center px-10 py-5 rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 shadow-[0_0_40px_-5px_rgba(245,158,11,0.5)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_-5px_rgba(245,158,11,0.8)] hover:-translate-y-1">
-              {/* Gloss Effect */}
-              <div className="absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-white/30 to-transparent opacity-100 rounded-t-full pointer-events-none"></div>
-              <div className="absolute inset-0 rounded-full border border-white/20 shadow-[inset_0_-4px_10px_rgba(0,0,0,0.2)]"></div>
-
-              <span className="relative z-10 text-white font-bold text-lg tracking-wide drop-shadow-md">
-                Start a Conversation
-              </span>
-            </a>
+            {/* 2. Changed <a> to <Link> and href to to */}
+            <Link 
+              to="/contact" 
+              className="relative group flex items-center justify-center px-10 py-5 rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 shadow-[0_0_40px_-5px_rgba(245,158,11,0.5)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_60px_-5px_rgba(245,158,11,0.8)] hover:-translate-y-1"
+            >
+                {/* Gloss Effect */}
+                <div className="absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-white/30 to-transparent opacity-100 rounded-t-full pointer-events-none"></div>
+                <div className="absolute inset-0 rounded-full border border-white/20 shadow-[inset_0_-4px_10px_rgba(0,0,0,0.2)]"></div>
+                
+                <span className="relative z-10 text-white font-bold text-lg tracking-wide drop-shadow-md">
+                   Start a Conversation
+                </span>
+            </Link>
           </div>
         </div>
       </section>

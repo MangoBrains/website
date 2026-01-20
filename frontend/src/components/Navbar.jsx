@@ -268,7 +268,7 @@ export default function Navbar() {
 
   {/* TEXT: Adjusted gap and spacing */}
   <div className="flex flex-col justify-center">
-    <span className="text-3xl font-bold text-white tracking-tight leading-none">
+    <span className="text-3xl font-bold text-white tracking-tight leading-none group-hover:text-green-400 transition-colors">
       Mango<span className="font-light text-slate-400 group-hover:text-white transition-colors">Brains</span>
     </span>
   </div>

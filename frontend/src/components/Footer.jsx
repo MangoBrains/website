@@ -415,7 +415,7 @@
 
 
 import React from "react";
-import logo from "../assets/logoweb1.png";
+import logo from "../assets/Logo_MB.png";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -435,13 +435,28 @@ export default function Footer() {
 
           {/* BRAND */}
           <div>
-            <div className="flex items-center gap-3 mb-6 group">
-              <div className="w-10 h-10 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center group-hover:border-green-500/50 group-hover:bg-green-500/10 transition-colors">
-                <img src={logo} alt="MangoBrains" className="w-6 h-6 object-contain" />
+
+            {/* BRAND IDENTITY */}
+            <div>
+              <div className="flex items-center gap-4 mb-6 group">
+
+                {/* LOGO (Freestanding & Larger) */}
+                <div className="relative w-14 h-14 flex items-center justify-center">
+                  {/* Subtle Glow on Hover */}
+                  <div className="absolute inset-0 bg-green-500/20 blur-[20px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  <img
+                    src={logo}
+                    alt="MangoBrains"
+                    className="w-full h-full object-contain relative z-10 transition-transform duration-300 group-hover:scale-110 drop-shadow-lg"
+                  />
+                </div>
+
+                {/* TEXT */}
+                <h3 className="text-xl font-bold text-white tracking-tight leading-none group-hover:text-green-400 transition-colors">
+                  Mango<span className="font-light text-slate-400 group-hover:text-white transition-colors">Brains</span>
+                </h3>
               </div>
-              <h3 className="text-lg font-bold text-white tracking-wide group-hover:text-green-400 transition-colors">
-                MangoBrains
-              </h3>
             </div>
 
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm border-l-2 border-slate-800 pl-4 hover:border-green-500/50 transition-colors">
@@ -454,13 +469,13 @@ export default function Footer() {
           </div>
 
           {/* COMPANY LINKS */}
-          <div className="md:pl-10">
+          {/* <div className="md:pl-10">
             <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-6 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
               Company
             </h4>
             <ul className="space-y-3">
-              {["Home", "Systems", "Process", "Industries", "About"].map((item) => (
+              {["Home", "How we work", "About"].map((item) => (
                 <li key={item}>
                   <a
                     href="#"
@@ -469,6 +484,30 @@ export default function Footer() {
                     <span className="w-0 h-[1px] bg-green-500 transition-all duration-300 group-hover:w-3"></span>
                     {item}
                   </a>
+                </li>
+              ))}
+            </ul>
+          </div> */}
+          <div className="md:pl-10">
+            <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-6 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+              Company
+            </h4>
+            <ul className="space-y-3">
+              {[
+                { name: "Home", path: "/" },
+                { name: "How we work", path: "/process" }, // Maps to your Process page
+                { name: "About", path: "/about" },
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link
+                    to={item.path}
+                    onClick={() => window.scrollTo(0, 0)} // Forces scroll to top
+                    className="group flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-all duration-300 hover:translate-x-1"
+                  >
+                    <span className="w-0 h-[1px] bg-green-500 transition-all duration-300 group-hover:w-3"></span>
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
