@@ -4,11 +4,11 @@ import smtplib
 from email.message import EmailMessage
 import os
 from dotenv import load_dotenv
-load_dotenv()
+
 from fastapi.middleware.cors import CORSMiddleware
 
 
-
+load_dotenv()
 app = FastAPI()
 
 app.add_middleware(
