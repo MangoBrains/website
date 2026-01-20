@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function ContactForm() {
+  const API_URL = "https://website-mango.onrender.com";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,7 +24,7 @@ export default function ContactForm() {
 
     try {
       // In production, use an environment variable for the URL
-      const response = await fetch("http://localhost:8000/contact", {
+      const response = await fetch(`${API_URL}/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
